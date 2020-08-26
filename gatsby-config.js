@@ -1,18 +1,3 @@
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /bad-module/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    });
-  }
-};
-
 module.exports = {
   pathPrefix: '/hphathu99.github.io',
   plugins: [
