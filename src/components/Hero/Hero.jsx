@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
-import ReactTypingEffect from 'react-typing-effect';
+import TypingEffect from 'typing-effect-react';
 import PortfolioContext from '../../context/context';
 
 const Header = () => {
@@ -10,7 +10,6 @@ const Header = () => {
   const { title, name, subtitle, cta } = hero;
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     if (window.innerWidth > 769) {
       setIsDesktop(true);
@@ -20,7 +19,6 @@ const Header = () => {
       setIsDesktop(false);
     }
   }, []);
-
   return (
     <section id="hero" className="jumbotron">
       <Container>
@@ -30,13 +28,12 @@ const Header = () => {
             <span className="text-color-main">{name || 'Your Name'}</span>
             <br />
             {subtitle || 'I am'}
-            <ReactTypingEffect
-              text={[
+            <TypingEffect
+              data={[
                 ' an aspiring software engineer.',
                 ' a sustainability enthusiast.',
                 ' a caffeinated thinker.',
               ]}
-              speed="100"
             />
           </h1>
         </Fade>
