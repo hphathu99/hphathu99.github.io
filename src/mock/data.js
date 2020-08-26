@@ -74,17 +74,17 @@ export const footerData = {
     {
       id: nanoid(),
       name: 'facebook',
-      url: '',
+      url: 'https://www.facebook.com/hathuhp.72',
     },
     {
       id: nanoid(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/thu-h-62ab1b117/',
     },
     {
       id: nanoid(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/hphathu99',
     },
   ],
 };

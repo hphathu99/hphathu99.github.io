@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
+import loadable from '@loadable/component';
 import PortfolioContext from '../../context/context';
 
 const Header = () => {
@@ -9,6 +10,7 @@ const Header = () => {
   const { title, name, subtitle, cta } = hero;
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const ReactTypingEffect = loadable(() => import('react-typing-effect'));
   useEffect(() => {
     if (window.innerWidth > 769) {
       setIsDesktop(true);
@@ -25,7 +27,16 @@ const Header = () => {
           <h1 className="hero-title">
             {title || 'Hi, my name is'}{' '}
             <span className="text-color-main">{name || 'Your Name'}</span>
-            {subtitle || 'I am an aspiring software engineer'}
+            <br />
+            {subtitle || 'I am'}
+            <ReactTypingEffect
+              text={[
+                ' an aspiring software engineer.',
+                ' a sustainability enthusiast.',
+                ' a caffeinated thinker.',
+              ]}
+              speed="100"
+            />
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
