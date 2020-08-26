@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
-import TypingEffect from 'typing-effect-react';
 import PortfolioContext from '../../context/context';
 
 const Header = () => {
@@ -26,15 +25,7 @@ const Header = () => {
           <h1 className="hero-title">
             {title || 'Hi, my name is'}{' '}
             <span className="text-color-main">{name || 'Your Name'}</span>
-            <br />
-            {subtitle || 'I am'}
-            <TypingEffect
-              data={[
-                ' an aspiring software engineer.',
-                ' a sustainability enthusiast.',
-                ' a caffeinated thinker.',
-              ]}
-            />
+            {subtitle || 'I am an aspiring software engineer'}
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
